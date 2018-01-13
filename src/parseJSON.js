@@ -100,7 +100,7 @@ var parseJSON = function(json) {
     var array = [];
     nextChar();
     if (currentChar === ']') {
-      nextChar();
+      //nextChar();
       return array;
     }
     while (currentChar !== ']') {
@@ -197,34 +197,9 @@ var parseJSON = function(json) {
     }
   };
   
-  json =  '{\r\n' +
-    '          "glossary": {\n' +
-    '              "title": "example glossary",\n\r' +
-    '      \t\t"GlossDiv": {\r\n' +
-    '                  "title": "S",\r\n' +
-    '      \t\t\t"GlossList": {\r\n' +
-    '                      "GlossEntry": {\r\n' +
-    '                          "ID": "SGML",\r\n' +
-    '      \t\t\t\t\t"SortAs": "SGML",\r\n' +
-    '      \t\t\t\t\t"GlossTerm": "Standard Generalized ' +
-    'Markup Language",\r\n' +
-    '      \t\t\t\t\t"Acronym": "SGML",\r\n' +
-    '      \t\t\t\t\t"Abbrev": "ISO 8879:1986",\r\n' +
-    '      \t\t\t\t\t"GlossDef": {\r\n' +
-    '                              "para": "A meta-markup language,' +
-    ' used to create markup languages such as DocBook.",\r\n' +
-    '      \t\t\t\t\t\t"GlossSeeAlso": ["GML", "XML"]\r\n' +
-    '                          },\r\n' +
-    '      \t\t\t\t\t"GlossSee": "markup"\r\n' +
-    '                      }\r\n' +
-    '                  }\r\n' +
-    '              }\r\n' +
-    '          }\r\n' +
-    '      }\r\n'
   
 
-  currentChar = json[0];
-
-  console.log(parseValue());
-  console.log(JSON.parse(json));
+  
+  
+  return parseValue();
 }
