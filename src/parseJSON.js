@@ -50,18 +50,13 @@ var parseJSON = function(json) {
       if (json[index+1] === ' ') {
       	string+= ' ';
       }
+      if (currentChar === ']') {
+      	throw SyntaxError('not grammatical');
+      }
       nextChar();
     }
     return string;
-    /*
-    while (!(currentChar === '"' && json[index-1] !== '\\' )) {
-      string += currentChar;
-      string = string.replace('\\\\', '\\');
-      nextChar();
-    }
     
-    return string;
-    */
 
   };
 
@@ -107,6 +102,10 @@ var parseJSON = function(json) {
       
       if (currentChar === ',') {
         nextChar();
+      }
+
+      if (currentChar === undefined) {
+      	throw SyntaxError('not grammatical');
       }
       
       array.push(parseValue());
